@@ -2,17 +2,22 @@ package com.sherlock.premssion.model;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * 资源
  * author: 小宇宙
  * date: 2018/4/5
  */
 @Data
+@Entity
 public class SysResource {
 
     /**
      * 主键id
      */
+    @Id
     private Integer id;
 
     /**
