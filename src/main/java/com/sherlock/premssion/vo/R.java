@@ -10,7 +10,7 @@ import lombok.Data;
  */
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Rvo<T> {
+public class R<T> {
 
     /**
      * 状态码

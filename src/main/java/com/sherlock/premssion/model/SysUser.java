@@ -3,6 +3,7 @@ package com.sherlock.premssion.model;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -18,6 +19,7 @@ public class SysUser {
      * 主键id
      */
     @Id
+    @GeneratedValue
     private Integer id;
 
     /**
@@ -38,5 +40,10 @@ public class SysUser {
     /**
      * 盐
      */
-    private String sale;
+    private String salt;
+
+    /**
+     * 是否禁用 0：否；1：是
+     */
+    private String forbidden;
 }
