@@ -19,7 +19,9 @@ public enum REnum {
 
     AUTH_ERROR(6,"账户验证失败"),
 
-    NOT_LOGIN(7,"未登录");
+    NOT_LOGIN(7,"未登录"),
+
+    NOT_PERMSSION(8,"您没有访问该功能的权限");
 
     private Integer code;
 
