@@ -14,6 +14,7 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * 认证与授权规则
@@ -21,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * date: 2018/4/5
  */
 @Slf4j
+@Component
 public class UserRealm extends AuthorizingRealm{
 
     @Autowired

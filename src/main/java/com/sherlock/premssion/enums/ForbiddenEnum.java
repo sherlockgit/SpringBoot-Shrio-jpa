@@ -7,9 +7,9 @@ package com.sherlock.premssion.enums;
  */
 public enum  ForbiddenEnum {
 
-    ENABLE(1,"启用"),
+    ENABLE(0,"启用"),
 
-    DISABLE(0,"禁用");
+    DISABLE(1,"禁用");
 
     private Integer code;
 
