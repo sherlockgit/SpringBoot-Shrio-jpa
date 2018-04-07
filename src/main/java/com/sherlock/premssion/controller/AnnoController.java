@@ -54,4 +54,13 @@ public class AnnoController {
         ShiroUtil.logout();
         return RUtil.success();
     }
+
+    /**
+     * 登录页面
+     * @return
+     */
+    @GetMapping("/notLogin")
+    public R notLogin(){
+       return RUtil.error(REnum.NOT_LOGIN.getCode(),REnum.NOT_LOGIN.getMessage());
+    }
 }

@@ -7,6 +7,7 @@ import com.sherlock.premssion.service.SysRoleService;
 import com.sherlock.premssion.utils.Assert;
 import com.sherlock.premssion.vo.R;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.validation.BindingResult;
@@ -32,6 +33,7 @@ public class SysRoleController {
      * @param bindingResult
      * @return
      */
+    @RequiresPermissions("sys:role:insert")
     @PostMapping("/saveRole")
     public R saveRole(@Valid @RequestBody SysRoleFrom sysRoleFrom,
                       BindingResult bindingResult){
@@ -50,6 +52,7 @@ public class SysRoleController {
      * @param name
      * @return
      */
+    @RequiresPermissions("sys:role:list")
     @GetMapping("/selectRoleList")
     public R selectRoleList(@RequestParam(value = "page", defaultValue = "0") Integer page,
                             @RequestParam(value = "size", defaultValue = "10") Integer size,
@@ -64,11 +67,12 @@ public class SysRoleController {
      * @param id
      * @return
      */
-    @GetMapping("/selectRoleDetial")
-    public R selectRoleDetial(@RequestParam(value = "id",required = false) Integer id){
+    @RequiresPermissions("sys:role:detail")
+    @GetMapping("/selectRoleDetail")
+    public R selectRoleDetail(@RequestParam(value = "id",required = false) Integer id){
 
         Assert.isNull(id,"id不能为空");
-        return sysRoleService.selectRoleDetial(id);
+        return sysRoleService.selectRoleDetail(id);
 
     }
 
@@ -78,6 +82,7 @@ public class SysRoleController {
      * @param bindingResult
      * @return
      */
+    @RequiresPermissions("sys:role:update")
     @PutMapping("/updateRole")
     public R updateRole(@Valid @RequestBody SysRoleFrom sysRoleFrom,
                         BindingResult bindingResult){
@@ -97,6 +102,7 @@ public class SysRoleController {
      * @param id
      * @return
      */
+    @RequiresPermissions("sys:role:delete")
     @DeleteMapping("/deleteRole/{id}")
     public R deleteRole(@PathVariable Integer id){
         return sysRoleService.deleteRole(id);

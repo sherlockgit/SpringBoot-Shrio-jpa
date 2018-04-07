@@ -13,5 +13,7 @@ public interface SysRoleResourceRepository extends JpaRepository<SysRoleResource
 
     List<SysRoleResource> findByRoleId(Integer roleId);
 
+    List<SysRoleResource> findByRoleId(List<Integer> roleIds);
+
     void deleteByRoleId(Integer id);
 }

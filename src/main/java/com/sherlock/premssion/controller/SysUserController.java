@@ -7,6 +7,7 @@ import com.sherlock.premssion.service.SysUserService;
 import com.sherlock.premssion.utils.Assert;
 import com.sherlock.premssion.vo.R;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.validation.BindingResult;
@@ -32,6 +33,7 @@ public class SysUserController {
      * @param bindingResult
      * @return
      */
+    @RequiresPermissions("sys:user:insert")
     @PostMapping("/saveUser")
     public R saveUser(@Valid @RequestBody SysUserFrom sysUserFrom,
                       BindingResult bindingResult){
@@ -51,6 +53,7 @@ public class SysUserController {
      * @param name
      * @return
      */
+    @RequiresPermissions("sys:user:list")
     @GetMapping("/selectUserList")
     public R selectUserList(@RequestParam(value = "page", defaultValue = "0") Integer page,
                             @RequestParam(value = "size", defaultValue = "10") Integer size,
@@ -65,11 +68,12 @@ public class SysUserController {
      * @param id
      * @return
      */
-    @GetMapping("/selectUserDetial")
-    public R selectUserDetial(@RequestParam(value = "id",required = false) Integer id){
+    @RequiresPermissions("sys:user:detail")
+    @GetMapping("/selectUserDetail")
+    public R selectUserDetail(@RequestParam(value = "id",required = false) Integer id){
 
         Assert.isNull(id,"id不能为空");
-        return sysUserService.selectUserDetial(id);
+        return sysUserService.selectUserDetail(id);
     }
 
     /**
@@ -78,6 +82,7 @@ public class SysUserController {
      * @param bindingResult
      * @return
      */
+    @RequiresPermissions("sys:user:update")
     @PutMapping("/updateUser")
     public R updateUser(@Valid @RequestBody SysUserFrom sysUserFrom,
                         BindingResult bindingResult){
@@ -97,6 +102,7 @@ public class SysUserController {
      * @param id
      * @return
      */
+    @RequiresPermissions("sys:user:delete")
     @DeleteMapping("/deleteUser/{id}")
     public R deleteUser(@PathVariable Integer id){
         return sysUserService.delectUser(id);

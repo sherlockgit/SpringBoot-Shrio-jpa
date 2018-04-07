@@ -17,7 +17,9 @@ public enum REnum {
 
     ACCOUNT_DISABLE(5,"账号已被禁用"),
 
-    AUTH_ERROR(6,"账户验证失败");
+    AUTH_ERROR(6,"账户验证失败"),
+
+    NOT_LOGIN(7,"未登录");
 
     private Integer code;
 

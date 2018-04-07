@@ -124,7 +124,7 @@ public class SysUserServiceImpl implements SysUserService {
      * @return
      */
     @Override
-    public R selectUserDetial(Integer id) {
+    public R selectUserDetail(Integer id) {
 
         /*查询用户基本信息*/
         SysUserVo sysUserVo = new SysUserVo();

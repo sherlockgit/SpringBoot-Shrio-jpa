@@ -18,7 +18,7 @@ public interface SysUserService {
 
     R selectUserList(String name, Pageable pageable);
 
-    R selectUserDetial(Integer id);
+    R selectUserDetail(Integer id);
 
     R updateUser(SysUserFrom sysUserFrom);
 

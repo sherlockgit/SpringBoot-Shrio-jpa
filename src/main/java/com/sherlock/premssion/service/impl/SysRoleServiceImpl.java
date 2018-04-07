@@ -99,7 +99,7 @@ public class SysRoleServiceImpl implements SysRoleService {
      * @return
      */
     @Override
-    public R selectRoleDetial(Integer id) {
+    public R selectRoleDetail(Integer id) {
 
         /*查询角色基本信息*/
         SysRoleVo sysRoleVo = new SysRoleVo();

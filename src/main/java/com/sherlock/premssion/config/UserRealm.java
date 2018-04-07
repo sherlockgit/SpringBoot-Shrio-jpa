@@ -3,6 +3,8 @@ package com.sherlock.premssion.config;
 import com.sherlock.premssion.enums.ForbiddenEnum;
 import com.sherlock.premssion.enums.REnum;
 import com.sherlock.premssion.model.SysUser;
+import com.sherlock.premssion.repository.SysResourceRepository;
+import com.sherlock.premssion.service.SysResourceService;
 import com.sherlock.premssion.service.SysUserService;
 import com.sherlock.premssion.utils.ShiroUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +12,7 @@ import org.apache.shiro.authc.*;
 import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
@@ -28,6 +31,9 @@ public class UserRealm extends AuthorizingRealm{
     @Autowired
     SysUserService sysUserService;
 
+    @Autowired
+    SysResourceService sysResourceService;
+
     /**
      * 用户授权
      * @param principalCollection
@@ -35,7 +41,10 @@ public class UserRealm extends AuthorizingRealm{
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        return null;
+
+        SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
+        simpleAuthorizationInfo.setStringPermissions(sysResourceService.selectUserPerms(ShiroUtil.getUserId()));
+        return simpleAuthorizationInfo;
     }
 
     /**

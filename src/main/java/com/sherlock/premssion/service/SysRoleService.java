@@ -14,7 +14,7 @@ public interface SysRoleService {
 
     R selectRoleList(String name,Pageable pageable);
 
-    R selectRoleDetial(Integer id);
+    R selectRoleDetail(Integer id);
 
     R updateRole(SysRoleFrom sysRoleFrom);
 
