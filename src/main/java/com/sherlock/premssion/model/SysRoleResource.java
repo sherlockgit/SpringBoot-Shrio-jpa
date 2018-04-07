@@ -4,6 +4,7 @@ package com.sherlock.premssion.model;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -19,6 +20,7 @@ public class SysRoleResource {
      * 主键id
      */
     @Id
+    @GeneratedValue
     private Integer id;
 
     /**

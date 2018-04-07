@@ -7,5 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * author: 小宇宙
  * date: 2018/4/5
  */
-public interface SysUserRoleRepository extends JpaRepository<SysUserRole,Integer> {
+public interface SysUserRoleRepository extends JpaRepository<SysUserRole,Integer>{
+
 }

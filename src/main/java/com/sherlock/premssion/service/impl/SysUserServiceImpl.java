@@ -1,5 +1,6 @@
 package com.sherlock.premssion.service.impl;
 
+import com.sherlock.premssion.model.SysUser;
 import com.sherlock.premssion.repository.SysUserRepository;
 import com.sherlock.premssion.service.SysUserService;
 import lombok.extern.slf4j.Slf4j;
@@ -19,4 +20,14 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Autowired
     SysUserRepository sysUserRepository;
+
+    /**
+     * 根据账号查询用户
+     * @param account
+     * @return
+     */
+    @Override
+    public SysUser findByAccount(String account) {
+        return sysUserRepository.findByAccount(account);
+    }
 }
