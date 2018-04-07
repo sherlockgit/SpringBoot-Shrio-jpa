@@ -7,7 +7,9 @@ package com.sherlock.premssion.enums;
  */
 public enum REnum {
 
-    UNkNOWN_ACCOUNT(1,"用户不存在");
+    UNkNOWN_ACCOUNT(1,"用户不存在"),
+
+    PARAM_ERROR(2, "参数不正确");
 
     private Integer code;
 

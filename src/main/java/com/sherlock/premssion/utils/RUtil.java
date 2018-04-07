@@ -12,7 +12,7 @@ public class RUtil {
     public static R success(Object object){
         R r = new R();
         r.setCode(0);
-        r.setMsg(null);
+        r.setMsg("ok");
         r.setData(object);
         return r;
     }
