@@ -1,7 +1,7 @@
 package com.sherlock.premssion.vo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.sherlock.premssion.model.SysResource;
+import com.sherlock.premssion.model.SysRole;
 import lombok.Data;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class SysRoleVo {
+public class SysUserVo {
 
     /**
      * 主键id
@@ -20,22 +20,27 @@ public class SysRoleVo {
     private Integer id;
 
     /**
-     * 角色名
+     * 姓名
      */
     private String name;
 
     /**
-     * 角色等级
+     * 账号
      */
-    private Integer grade;
+    private String account;
 
     /**
-     * 备注
+     * 密码
      */
-    private String remark;
+    private String password;
 
     /**
-     * 拥有资源
+     * 是否禁用 0：否；1：是
      */
-    private List<SysResource> sysResources;
+    private String forbidden;
+
+    /**
+     * 用户角色
+     */
+    private List<SysRole> sysRoles;
 }

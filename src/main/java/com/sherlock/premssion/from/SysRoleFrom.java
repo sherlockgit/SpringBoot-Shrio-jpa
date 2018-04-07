@@ -24,6 +24,7 @@ public class SysRoleFrom {
     /**
      * 角色名
      */
+    @Length(max = 32,message = "长度不能超过32位")
     @NotEmpty(message = "角色名称不能为空")
     private String name;
 

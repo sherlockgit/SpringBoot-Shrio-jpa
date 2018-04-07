@@ -97,8 +97,8 @@ public class SysRoleController {
      * @param id
      * @return
      */
-    public R deleteRole(@RequestParam(value = "id",required = false) Integer id){
-        Assert.isNull(id,"id不能为空");
+    @DeleteMapping("/deleteRole/{id}")
+    public R deleteRole(@PathVariable Integer id){
         return sysRoleService.deleteRole(id);
     }
 }

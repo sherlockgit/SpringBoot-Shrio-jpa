@@ -1,6 +1,9 @@
 package com.sherlock.premssion.repository;
 
 import com.sherlock.premssion.model.SysUser;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
@@ -16,4 +19,6 @@ public interface SysUserRepository extends JpaRepository<SysUser,Integer> {
      * @return
      */
     SysUser findByAccount(String account);
+
+    Page<SysUser> findAll(Specification<SysUser> sysRoleSpecification, Pageable pageable);
 }

@@ -1,5 +1,6 @@
 package com.sherlock.premssion.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -35,11 +36,13 @@ public class SysUser {
     /**
      * 密码
      */
+    @JsonIgnore
     private String password;
 
     /**
      * 盐
      */
+    @JsonIgnore
     private String salt;
 
     /**

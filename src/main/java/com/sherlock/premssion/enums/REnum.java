@@ -9,7 +9,9 @@ public enum REnum {
 
     UNkNOWN_ACCOUNT(1,"用户不存在"),
 
-    PARAM_ERROR(2, "参数不正确");
+    PARAM_ERROR(2, "参数不正确"),
+
+    ACCOUNT_EXIST(3,"该账号已存在");
 
     private Integer code;
 
