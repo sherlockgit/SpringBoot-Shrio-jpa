@@ -1,6 +1,6 @@
 # SpringBoot+Shiro权限管理系统脚手架
-##技术应用
-项目管理工具：Maven 3.3；
+## 技术应用
+<br>项目管理工具：Maven 3.3；
 <br>jdk：jdk1.8；
 <br>MVC框架：SpringMVC；
 <br>核心框架：SpringBoot；
