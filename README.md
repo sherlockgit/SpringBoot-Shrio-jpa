@@ -4,7 +4,7 @@
 <br>jdk：jdk1.8；
 <br>MVC框架：SpringMVC；
 <br>核心框架：SpringBoot；
-<br>ORM:Spring JPA；
+<br>ORM:Spring Data JPA；
 <br>安全框架：shiro；
 <br>Json:Jackson；
 <br>日志框架：logback+slf4j；
